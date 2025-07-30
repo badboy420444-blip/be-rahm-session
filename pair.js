@@ -65,11 +65,11 @@ router.get('/', async (req, res) => {
     const id = malvinid(); 
     let num = req.query.number;
 
-    async function MALVIN_PAIR_CODE() {
+    async function BE_RAHM_PAIR_CODE() {
         const { state, saveCreds } = await useMultiFileAuthState('./temp/' + id);
 
         try {
-            let Malvin = Malvin_Tech({
+            let BE_RAHM = 𓍯‌𝐁𝐞↷𝐑𝐚𝐡𝐦🫩❗({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -79,7 +79,7 @@ router.get('/', async (req, res) => {
                 browser: Browsers.macOS("Safari")
             });
 
-            if (!Malvin.authState.creds.registered) {
+            if (!MBE_RAHM.authState.creds.registered) {
                 await delay(1500);
                 num = num.replace(/[^0-9]/g, '');
                 const code = await Malvin.requestPairingCode(num);
@@ -90,8 +90,8 @@ router.get('/', async (req, res) => {
                 }
             }
 
-            Malvin.ev.on('creds.update', saveCreds);
-            Malvin.ev.on("connection.update", async (s) => {
+            BE_RAHM.ev.on('creds.update', saveCreds);
+            BE_RAHM.ev.on("connection.update", async (s) => {
                 const { connection, lastDisconnect } = s;
 
                 if (connection === "open") {
@@ -133,7 +133,7 @@ router.get('/', async (req, res) => {
                     await 𓍯‌𝐁𝐞↷𝐑𝐚𝐡𝐦🫩❗, { text: BE_RAHM_TEXT }, { quoted: session });
 
                     await delay(100);
-                    await Malvin.ws.close();
+                    await BE_RAHM.ws.close();
                     return removeFile('./temp/' + id);
                 } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode !== 401) {
                     await delay(10000);
